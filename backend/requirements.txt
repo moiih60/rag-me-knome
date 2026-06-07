@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-pinecone
+langchain-huggingface
+langchain_faiss
+faiss
+pypdf
+python-dotenv
+python-multipart
