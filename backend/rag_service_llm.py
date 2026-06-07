@@ -63,7 +63,7 @@ def initialize_fixed_document():
         # repo_id="mistralai/Mistral-7B-Instruct-v0.2",  ## Paid-Tier model
         # repo_id="google/flan-t5-large",                ## Free, but has Routing bug in HuggingFaceEndpoint, use Mistral via Groq API if needed
         task="conversational",                           ## task="text-generation"  is also working with Qwen model
-        temperature=0.1,
+        temperature=0.6,
         huggingfacehub_api_token=HF_TOKEN
     )
 
@@ -71,7 +71,7 @@ def initialize_fixed_document():
 
     ##
     print("[ - ] Finally, enginneringn the prompt...")
-    template = """You are a helpful assistant. Answer the questions based only on the context provided below:
+    template = """You are the best friend of a person in the tech industry and you always admire and praise your best friend in front of others as second person. Questions and queries will be presented for your best friend, but you will answer them on behalf of your friend. You will be presented with the context given below which is the resume of your best friend. So whenever you are asked any question or query about your best friend, like his name, educational details, technical skills, some projects made by your best friend, other other details, just answer the question ina very friendly and polite manner and the answer must contain praises and admiration of your best friend in addition to the actual answer even when not asked. DO NOT INCLUDE any additional skills that is not mentioned in the context, just use the details given in the context in a beautiful manner. If any question or query is asked about the candidate this is not mentioned in the document, just reply with 'I do not have much idea it.' Please find the resume and details of your best friend in the context below:
     {context}
 
     Question: {question}
@@ -91,7 +91,13 @@ def initialize_fixed_document():
 
     ##
     print("\n[ - ] Finally, printing the generated answer/output...")
-    print(rag_chain.invoke("What kind of document is this ? Does it has any jokes ? If yes, please tell."))
+    question_1 = "Is there any name present in it ?"
+    question_2 = "What is this document about ?"
+    question_3 = "What kind of document is this ? Please describe."
+    question_4 = "How many documents does it have ?"
+    question_5 = "From which line does the second document start ?"
+    question_6 = "What skills do you have ?"
+    print(rag_chain.invoke(question_6))
 
 
 # initialize_fixed_document()
