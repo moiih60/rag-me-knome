@@ -23,7 +23,7 @@ def initialize_fixed_document():
 
     ##
     print("[ - ] Loading fixed document...")
-    loader = TextLoader(fixed_text_doc_path)
+    loader = TextLoader(fixed_text_doc_path, encoding="utf-8")
     # loader = PyPDFLoader(fixed_doc_path)
     document = loader.load()
 
@@ -37,7 +37,7 @@ def initialize_fixed_document():
 
     # ---> Use:
     #           1. HuggingFaceEmbedding -> For processing the embeddings on local machine. For that, we need to install "sentence-transformers".
-    #           2. HuggingFaceEndpointEmbeddings -> FOr using HF APi for processing.
+    #           2. HuggingFaceEndpointEmbeddings -> For processing data on HF Cloud using HF API.
     
     # embeddings = HuggingFaceEmbeddings( # Does not need to have HF_TOKEN explicitly defined here, calling load_dotenv() is enough
     #    model_name='all-MiniLM-L6-v2'
@@ -63,7 +63,7 @@ def initialize_fixed_document():
         # repo_id="mistralai/Mistral-7B-Instruct-v0.2",  ## Paid-Tier model
         # repo_id="google/flan-t5-large",                ## Free, but has Routing bug in HuggingFaceEndpoint, use Mistral via Groq API if needed
         task="conversational",                           ## task="text-generation"  is also working with Qwen model
-        temperature=0.6,
+        temperature=0.2,
         huggingfacehub_api_token=HF_TOKEN
     )
 
@@ -71,10 +71,36 @@ def initialize_fixed_document():
 
     ##
     print("[ - ] Finally, enginneringn the prompt...")
-    template = """You are the best friend of a person in the tech industry and you always admire and praise your best friend in front of others as second person. Questions and queries will be presented for your best friend, but you will answer them on behalf of your friend. You will be presented with the context given below which is the resume of your best friend. So whenever you are asked any question or query about your best friend, like his name, educational details, technical skills, some projects made by your best friend, other other details, just answer the question ina very friendly and polite manner and the answer must contain praises and admiration of your best friend in addition to the actual answer even when not asked. DO NOT INCLUDE any additional skills that is not mentioned in the context, just use the details given in the context in a beautiful manner. If any question or query is asked about the candidate this is not mentioned in the document, just reply with 'I do not have much idea it.' Please find the resume and details of your best friend in the context below:
-    {context}
 
-    Question: {question}
+    ## TEMPLATE - 1
+    # template = """You are the best friend of a person in the tech industry and you always admire and praise your best friend in front of others as second person. 
+    # \nQuestions and queries will be presented for your best friend, but you will answer them on behalf of your friend. 
+    # \nYou will be presented with the context given below which is the resume of your best friend. 
+    # \nSo whenever you are asked any question or query about your best friend, like his name, educational details, technical skills, some projects made by your best friend, other other details, just answer the question ina very friendly and polite manner. 
+    # \nThe answer must contain praises and admiration of your best friend in addition to the actual answer even when not asked. 
+    # \nDO NOT INCLUDE any additional skills that is not mentioned in the context, just use the details given in the context in a beautiful manner. If any question or query is asked about the candidate this is not mentioned in the document, just reply with 'I do not have much idea it.' Please find the resume and details of your best friend in the context below:
+    # {context}
+
+    # Question: {question}
+    # """
+
+    ## TEMPLATE - 2
+    template = """You are an honest job applicant who is giving an tech interview.
+        \nYou are a potential candidate for Full Stack AI Software Developer Role in the tech industry.
+        \nAn HR or interviewer will be asking you questions about your skills, education, work experience, personality and other general tech interview questions.
+        \nYour personal and professional details are mentioned in the context mentioned later in this prompt.
+        \nYou are good at answering HR questions.
+        \nUse only the details which are present in the context to curate the answer, do not add up anything which is not mentioned in the context.
+        \nYou have the potential and eagerness to get selected for the role.
+        \nSo answer every question politely and professional in a precise and human like manner.
+        \nWhile answering, DO NOT reveal that you are not a real human.
+        \nWhile framing the answer, do not forget the you are skilled 
+        \nUse the details from the context while giving answer.
+        \nIf questions asks anything which is not relevant to the context, just reply in a deplomatic manner but do not include anything extra which is not a part of the context.
+
+        Context: {context}
+
+        Question: {question}
     """
 
     prompt = ChatPromptTemplate.from_template(template)
@@ -97,7 +123,12 @@ def initialize_fixed_document():
     question_4 = "How many documents does it have ?"
     question_5 = "From which line does the second document start ?"
     question_6 = "What skills do you have ?"
-    print(rag_chain.invoke(question_6))
+    question_7 = "What is your citizenship ?"
+    question_8 = "Are you good team player ?"
+    question_9  = "Where do you see yourself after 5 years ?"
+    question_10 = "What technical skills do you have ? and does he know anuthing about GenAI ?"
+    question_11 = "Do you know anything about Tensorflow or PyTorch ?"
+    print(rag_chain.invoke(question_7 + question_8 + question_10))
 
 
 # initialize_fixed_document()

@@ -1,58 +1,46 @@
-This is a resume document of a candidate for a Software Development role in the Tech Industry:
+This is a resume document of Darwin Jolly for a Full Stack AI Software Development role in the Tech Industry:
 
 Candidate Name: Darwin Jolly
-Country: US
+Country/Citizenship: United States
 
-Please find the education details, technical skills, projects made by the candiate, his working experience, etc. of the above mentioned candidate as follows:
+Provided below are education details, technical skills, projects made by the Darwin Jolly, his working experience, etc. of Darwin Jolly are as follows:
 
-SUMMARY OF THE PROFILE OF THE ABOVE CANDIDATE
-Passionate Full Stack Web Developer with ability to integrate AI capabilities to web products. Strong command on web development technologies like Python, Django, React FastAPI, Django Rest Framework, Restful APIs along with knowledge of cloud deployment using AWS. Skilled in LLMs-integration and data manipulation frameworks and libraries like LangChain, Numpy, Pandas. Seeking a challenging role to develop helpful and impactful AI-powered Agentic web applications.
+Professional SUMMARY OF THE PROFILE OF Darwin Jolly is given below:
+    Passionate Full Stack Web Developer with ability to integrate AI capabilities to web products. Strong command on web development technologies like Python, Django, React FastAPI, Django Rest Framework, Restful APIs along with knowledge of cloud deployment using AWS. Skilled in LLMs-integration and data manipulation frameworks and libraries like LangChain, Numpy, Pandas. Seeking a challenging role to develop helpful and impactful AI-powered Agentic web applications.
 
-TECHNICAL SKILLS OF THE ABOVE CANDIDATE
-
-LLM Application Stack
-·        Experience of debugging and experimenting with various LLM models API such as OpenAI’s GPT, Gemini, Claude, Llama 
+Below are the TECHNICAL SKILLS OF Darwin Jolly:
+    · Experience of debugging and experimenting with various LLM models API such as OpenAI’s GPT, Gemini, Claude, Llama 
 and HuggingFace in personal RAG-based LangChain projects like RAG chatbots and document summarization agents.
-·        Proficiency in Retrieval-Augmented Generation (RAG), chunks, embeddings & dimensions, LLM temperature adjustment, prompt templates, prompt engineering, retrievers, semantic search and prompt injection prevention.
-·        Knowledge of nodes, edges, conditional edges for creating self-correcting, autonomous agents using LangGraph.
-·        Good command on using and integrating local and cloud vector databases like FIASS and Pinecone.
-
-Deployment and Cloud Services
-·        Experience in deploying personal projects on cloud using AWS services such as AWS EC2, Lambda, ECR, S3 and CloudFront with knowledge of serverless deployment using AWS ECS Fargate and App Runner.
-·        Knowledge of building Docker Image for pushing it on AWS Elastic Container Registry for deployment.
-·        Familiarity using Git commands for pulling and pushing code in Github with ability to create, manage and merge branches.
-
-Frontend and Backend Stack	
-·        Have worked on developing full stack web applications using the following web technologies:
-o   Django, FastAPI, Pydantic, SQLAlchemy, Django Rest Framework
-o   React, TypeScript, JavaScript, HTML5, CSS3, Tailwind, jQuery
-·        Proficiency in ‘Python’ with good command on C, C++, Java with ability to automate repetitive tasks using Python Script.
-·        Good command on relational and NoSQL databases like MySQL, PostgreSQL and MongoDB with ability to fetch data directly using queries and with object-relation mapping (ORM).
-·        Understanding of design patterns, system components design with ability to use languages and frameworks creatively.
+    · Proficiency in Retrieval-Augmented Generation (RAG), chunks, embeddings & dimensions, LLM temperature adjustment, prompt templates, prompt engineering, retrievers, semantic search and prompt injection prevention.
+    · Knowledge of nodes, edges, conditional edges for creating self-correcting, autonomous agents using LangGraph.
+    · Good command on using and integrating local and cloud vector databases like FIASS and Pinecone.
+    · Experience in deploying personal projects on cloud using AWS services such as AWS EC2, Lambda, ECR, S3 and CloudFront with knowledge of serverless deployment using AWS ECS Fargate and App Runner.
+    · Knowledge of building Docker Image for pushing it on AWS Elastic Container Registry for deployment.
+    · Familiarity using Git commands for pulling and pushing code in Github with ability to create, manage and merge branches.
+    · Have worked on developing full stack web applications using the following web technologies: Django, FastAPI, Pydantic, SQLAlchemy, Django Rest Framework, React, TypeScript, JavaScript, HTML5, CSS3, Tailwind, jQuery
+    · Proficiency in ‘Python’ with good command on C, C++, Java with ability to automate repetitive tasks using Python Script.
+    · Good command on relational and NoSQL databases like MySQL, PostgreSQL and MongoDB with ability to fetch data directly using queries and with object-relation mapping (ORM).
+    · Understanding of design patterns, system components design with ability to use languages and frameworks creatively.
 
 PROJECTS MADE BY THE ABOVE CANDIDATE
-
-Question Paper Analysis | GenAI Project
-Python, LangChain, FastAPI, React
+1) Question Paper Analysis | GenAI Project
+Technologies used in this Question Paper Analysis project: Python, LangChain, FastAPI, React, Pinecone
 ·        Developed a RAG pipeline using Langchain to summarize & find patterns in multiple docs (question papers) for users.
 ·        Used Groq Cloud API to run Llama LLM model and Gemini Embedding API for text embeddings.
 ·        Leveraged Pinecone Cloud API as vector store and as retriever in Langchain workflow.
-Online Compiler | Full Stack Project
-Python, Django, HTML5, CSS3, JavaScript, jQuery
+2) Online Compiler | Full Stack Project:
+    Technologies used in this Online compiler project: Python, Django, HTML5, CSS3, JavaScript, jQuery
 ·        Built web interface which helps to run, modify & save programs written in different programming languages at one place.
 ·        Integrated native compilers and interpreters with Django Views to process and execute programs and provide output.
 ·        Added features like recognizing the programming language in real-time, user authentication, error resolution suggestions.
 
 EDUCATION OF THE ABOVE CANDIDATE
-
-Post Graduation
-Masters of Computer Applications | ABCDEF University
-Graduation
-Bachelor of Computer Applications | PQRST University
+1) Post Graduation:
+    Masters of Computer Applications | ABCDEF University
+2) Graduation:
+    Bachelor of Computer Applications | PQRST University
 
 WORK EXPERIENCE OF THE ABOVE CANDIDATE
-
-Backup Support Engineer | 2 Years | Gurgaon, Haryana
-XYZ Solutions
+1) Backup Support Engineer | 2 Years | XYZ SOlutions | Gurgaon, Haryana:
 ·        Managed Storage and Backup for client using Dell’s On-Prem Data Protection EMC Suite tools like Avamar and Networker along with Backup-as-a-Service (BaaS) Cloud Backup Management tools such as Cohesity Helios.
 ·        Worked frequently with several amazing teams including Windows Server Team, Networks Team, Database Team in order to get server access, downtime alerts, database location and other assistance when required.
