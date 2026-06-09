@@ -70,7 +70,7 @@ prompt = ChatPromptTemplate.from_template(template)
 
 ##
 print("[ - ] Creating the RAG Pipeline...")
-rag_chain = (
+query_chain = (
     { "context": retriever, "question": RunnablePassthrough() }
     
     | prompt
@@ -79,19 +79,19 @@ rag_chain = (
 )
 
 ##
-print("\n[ - ] Finally, printing the generated answer/output...")
-question_1 = "Is there any name present in it ?"
-question_2 = "What is this document about ?"
-question_3 = "What kind of document is this ? Please describe."
-question_4 = "How many documents does it have ?"
-question_5 = "From which line does the second document start ?"
-question_6 = "What skills do you have ?"
-question_7 = "What is your citizenship ?"
-question_8 = "Are you good team player ?"
-question_9  = "Where do you see yourself after 5 years ?"
-question_10 = "What technical skills do you have ? and does he know anything about GenAI ?"
-question_11 = "Do you know anything about Tensorflow or PyTorch ?"
-question_12 = "What do you do for a living ?"
-question_13 = "Do you know about LangGaph ? Have you developed any agentic AI project using LangGraph ?"
-print(rag_chain.invoke(question_8 + question_9 + question_12))
+# print("\n[ - ] Finally, printing the generated answer/output...")
+# question_1 = "Is there any name present in it ?"
+# question_2 = "What is this document about ?"
+# question_3 = "What kind of document is this ? Please describe."
+# question_4 = "How many documents does it have ?"
+# question_5 = "From which line does the second document start ?"
+# question_6 = "What skills do you have ?"
+# question_7 = "What is your citizenship ?"
+# question_8 = "Are you good team player ?"
+# question_9  = "Where do you see yourself after 5 years ?"
+# question_10 = "What technical skills do you have ? and does he know anything about GenAI ?"
+# question_11 = "Do you know anything about Tensorflow or PyTorch ?"
+# question_12 = "What do you do for a living ?"
+# question_13 = "Do you know about LangGaph ? Have you developed any agentic AI project using LangGraph ?"
+# print( query_chain.invoke(question_8 + question_9 + question_12) )
 
