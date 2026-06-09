@@ -17,7 +17,7 @@ def build_fixed_vector_store():
     fixed_doc_path = "knowledge_base_knome.txt"
 
     ##
-    print("[ - ] Loading fixed document...")
+    print("[ - ] Loading fixed document in INIT_VEECTOR_DB...")
     loader = TextLoader(fixed_doc_path, encoding="utf-8")
     document = loader.load()
 
@@ -37,11 +37,11 @@ def build_fixed_vector_store():
     print(f"[ - ] Pushing {len(chunks)} chunks to FIASS vector store...")
     vector_store = FAISS.from_documents(documents=chunks, embedding=embeddings)
     # saving the vector db data locally
-    vector_store.save_local("faiss_rag_index")
+    vector_store.save_local("../faiss_rag_index")
 
     ##
     print("[ - ] Getting the local absolute path of the FAISS index...")
-    faiss_index_path = os.path.abspath("faiss_rag_index")
+    faiss_index_path = os.path.abspath("../faiss_rag_index")
     print(f"\tDatabase built successfully at: {faiss_index_path}")
 
 
