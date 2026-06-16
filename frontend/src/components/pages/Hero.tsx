@@ -1,14 +1,17 @@
-import Navbar from "./Navbar";
+import { useScreenSize } from "../hooks/useWindowSize";
 
 
 function Hero() {
+
+	const { width, height } = useScreenSize();
+
 	return (
 		<>
-			<div className="text-center p-6 bg-orange-400 rounded-xl">
+			<div className="text-center p-3 bg-orange-400 rounded-xl">
 				<span>
-					Hero Main Section
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus placeat et obcaecati, vitae quisquam qui omnis esse impedit, officia aliquid, ducimus laudantium? Possimus fugit laudantium nam nemo deleniti impedit aliquid!
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, unde laboriosam doloribus quo maiores autem esse reiciendis dolores, hic ullam perferendis pariatur? Mollitia voluptatibus porro consequatur quo. Autem exercitationem mollitia eius quas ullam modi dolore ratione ad libero voluptatem dolorum, explicabo eum enim, delectus esse consectetur nostrum qui id incidunt sequi. Doloremque debitis facilis alias quis voluptates quae consequuntur fuga quaerat perspiciatis est architecto, dolore molestias obcaecati delectus quisquam quia deserunt voluptate! A iusto eos amet temporibus repudiandae! Rem, vero libero nostrum deserunt assumenda ex cupiditate eligendi perspiciatis sunt! Facilis culpa hic obcaecati? Iure officiis iste aliquid eos eveniet inventore odio laborum corrupti cupiditate dolorem obcaecati libero, in tempore, voluptatibus corporis ipsa? Tempora laudantium, dignissimos ab id recusandae saepe obcaecati quisquam, facere expedita pariatur non? Tenetur illo porro, totam quod, iusto numquam deserunt consequatur, adipisci magni explicabo facilis expedita nisi quas. Illo vitae praesentium explicabo reiciendis sit ab quos voluptatum! Porro explicabo quo doloremque autem dicta eligendi corrupti corporis delectus quos tempora voluptatum fugiat harum a velit, sequi eveniet dignissimos. Impedit, fugit? Voluptatem perferendis et eius illum iste obcaecati porro odit veritatis quas, consequuntur fugit ullam a itaque adipisci pariatur velit neque soluta quia esse nam? Deleniti soluta cumque est. Voluptatum illum perspiciatis voluptate saepe recusandae quam vero ad laboriosam explicabo harum iure odit provident temporibus consectetur nisi accusantium dicta perferendis exercitationem assumenda, sint, eum placeat repellendus? Id nemo aliquam fugiat eius labore maxime dolore impedit accusantium tenetur dolorem cupiditate natus repellendus porro perferendis harum fugit, quo hic ad nam facilis ut vel quis? Tempore numquam ratione placeat nam, provident vero voluptas. Quos voluptas aliquam veritatis voluptatum ullam eum, omnis dignissimos id asperiores in architecto non dolorem optio eos quibusdam molestias odio unde maxime pariatur eius dolores voluptate! Optio alias animi aliquam nostrum ea vel earum dicta, dolore similique dolorum tempore, libero obcaecati esse enim doloremque reiciendis? Ipsa quae cumque accusantium non, molestiae earum ullam nulla quos assumenda repellendus eos labore ut! Sequi explicabo deleniti veritatis, et, odio possimus fugit excepturi hic eaque deserunt quas. Aliquam vero nulla qui, aperiam fuga fugit quia obcaecati exercitationem suscipit molestias assumenda aliquid mollitia, officiis necessitatibus sequi atque cum laborum repudiandae, ea eius consectetur! Eveniet accusantium esse repellat perferendis cumque earum at nihil sapiente nemo reiciendis ratione aspernatur architecto itaque, accusamus asperiores tempore magnam. Similique nostrum obcaecati dolorem corporis quidem ipsum tempora. Amet pariatur facere tenetur quidem exercitationem maxime provident dicta repudiandae? At tempora, cupiditate commodi tenetur, adipisci, saepe laudantium ipsum nemo repellendus soluta aspernatur labore? Ea soluta ducimus illo laudantium aliquid recusandae qui aperiam rem delectus neque? Veniam obcaecati vitae consequuntur id. Illum recusandae eveniet debitis tempora atque nam similique voluptas nemo in incidunt, a excepturi asperiores reprehenderit dicta, eligendi perferendis dolorum minima ut aliquid quis. Porro dicta itaque, quisquam perferendis neque enim maxime voluptatem laborum doloribus quasi, quis dolorum explicabo quas accusamus beatae animi, tempore sint soluta! Maiores qui laborum labore ipsam officia dignissimos quod autem illo repellat, velit ipsa quos necessitatibus adipisci enim earum nesciunt quasi sed aliquid ullam error totam.
+					Hero Main Section <br />
+					Width: {width}  <br />
+					Height: {height}  <br />
 				</span>
 			</div>
 		</>
