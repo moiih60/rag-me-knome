@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { navbarItems, type MenuItems }  from '../config/navigation';
+import { navbarItems, type MenuItems }  from '../navigation';
 
 
 function Navbar() {
