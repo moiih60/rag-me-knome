@@ -1,8 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from validators.api_validator import ChatRequest
-# from services.rag_llm import query_chain
-from services.rag_llm import conversational_rag_chain
+from services.rag_llm import query_chain
 
 
 app = FastAPI(title='Rag-Me-Knowme API Endpoint', description='API Endpoint for Rag-Me AI Web App')
@@ -33,30 +32,31 @@ def save_llm_response_to_disk(question: str, response: str):
 # Chat API end-point 
 @app.post('/api/chat')
 async def chat_endpoint(request: ChatRequest):
+   
     try:
-        print("[ - ] User response received at API endpoint...")
-        print("Extracted Question from API REQUEST: ", request.question)
-        print("Extracted Session ID from API REQUEST: ", request.session_id)
+        print("[ - ] User response received at API endpoint...", end="\n\t")
+        print("Request RAW data: ", request, end="\n\t")
+        print("Extracted Question from API REQUEST: ", request.question, end="\n\t")
+        print("Dictionary format: ", request.model_dump())
 
-        # We pass a Python dictionary containing the keys LangChain expects
-        result = conversational_rag_chain.invoke(
-            {"input": str(request.question)},
-            config={"configurable": {"session_id": request.session_id}}
-        )
+        print("[ - ] Finallly printing the LLM response from FastAPI function...")
+        # print("[ - ] LLM Response:\n", llm_response)
+        # llm_response = query_chain.invoke("Tell me about yourself.")
+        llm_response = query_chain.invoke(str(request.question))
 
-        # The final text answer from the model lives inside the 'answer' key
-        llm_response = result["answer"]
-
-        # Local disk fallback save utility
+        # saving the llm response to a text file locally
         try:
-            save_llm_response_to_disk(request.question, llm_response)
+            user_question = request.question
+            llm_answer = llm_response  # unnecessary btw
+            save_llm_response_to_disk(user_question, llm_answer)
         except Exception as err:
-            print("Error in saving LLM response to disk: ", str(err))
+            print("Error in saving LLm response to disk: ", str(err))
 
+        ## finally returning the response to frontend
         return {'response': llm_response}
 
+
     except Exception as e:
-        print("[ ERROR FOUND ]: ", str(e))
         raise HTTPException(status_code=500, detail=str(e))
 
 

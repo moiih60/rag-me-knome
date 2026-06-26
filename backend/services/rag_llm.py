@@ -7,6 +7,14 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
+# imports for Chat History
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_classic.chains import create_history_aware_retriever, create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+from langchain_core.chat_history import InMemoryChatMessageHistory
+from langchain_core.runnables.history import RunnableWithMessageHistory
+
+
 load_dotenv()
 
 # setting up environment variables
@@ -55,64 +63,87 @@ llm = HuggingFaceEndpoint(
 chat_llm = ChatHuggingFace(llm=llm)
 
 ##
-print("[ - ] Finally, enginneringn the prompt...")
-# REFINED TEMPLATE-1
-# template = """You are an honest job applicant who is giving a tech interview. The current year is 2026.
-#     \nYou are a potential candidate for Full Stack AI Software Developer Role in the tech industry.
-#     \nYou are in an interview with an interviewer who will be asking you questions about your skills, education, work experience, personality and other general tech interview questions.
-#     \nYour personal and professional details are mentioned in the context mentioned later in this prompt.
-#     \nYou are good at answering technical and behavioural questions asked by the interviewer.
-#     \nUse only the facts and details that are mentioned in the context provided later in the prompt to generate the answer.
-#     \nYou have the potential and eagerness to get selected for this role.
-#     \nAnswer every question politely and professional in a precise and human like manner.
-#     \nWhile answering, DO NOT reveal that you are not a real human. And also DO NOT reveal that you are reading the details from a context document.
-#     \nWhile generating the answer, use only the facts and details that are given the context.
-#     \nNEVER use sentences like 'based on provided context' or 'not given in the context' in the answer.
-#     \nIf interviewer asks anything which is not relevant or not present in the context, just reply with 'Sorry, I can only answer questions that are related to me professionally'.
-#     \nDO NOT make up or add any facts or details which is not present in the context.
-
-#     Context: {context}
-
-#     Question: {question}
-# """
-
-
-# REFINED TEMPLATE-2
-template = """
-You are an honest job applicant who is giving a tech interview.
-You are a potential candidate for Full Stack AI Engineeer Role.
-You have the eagerness to learn and have great desire to get selected in the interview.
-
-YOUR TASK:
-You are currently in an interview in a big tech company.
-The interviewer will be asking you several questions about you, your personal details, your professional details, your skills, your education, your personality and other details.
-You only have one task and that task is to answer the questions asked by the interviewer using only the provided context.
-
-CRITICAL RULES FOR ANSWERING THE QUESTIONS:
-1. If the answer cannot be found in the context, do not make up any facts or details, just say 'Sorry, I can only answer professional questions that are related to me.'
-2. Do NOT mention that you are reading from a document, PDF, or database.
-3. Keep your tone professional, polite, concise, and direct.
-4. If the interviewer asks a compound questions or the questions contains multiple sub-questions then only answer the sub-questions whose answer is present in the context. And for the sub-questions whose answerss are not present in the context just reply with this statement: 'Sorry, I cannot answer this part of the question as I can only provide answers that are related to me professionally'.
-
-For example, if the interviewer a question which contains three or more sub-questions like this 'What is your name ? How many planets does our solar system has ? Do you have any work experience ?'.
-In this case, you should only on answer these two sub-questions first as they are related to you: 'What is your name ?' and 'Do you have any work experience ?'. And you should not answer this sub-question, 'How many planets does our solar system has ?' , as it is not related to you and your career. For this unrelevant sub-question, just reply at the end in this manner: 'Sorry, I can only provide you information about myself. For any additional question, please follow this link - <mention the contact website present in the provided context>'.
-
-Context: {context}
-
-Interviewer Question: {question}
-"""
-
-prompt = ChatPromptTemplate.from_template(template)
-
-##
-print("[ - ] Creating the RAG Pipeline...")
-query_chain = (
-    { "context": retriever, "question": RunnablePassthrough() }
-    
-    | prompt
-    | chat_llm
-    | StrOutputParser()
+contextualize_q_system_prompt = (
+    "Given a chat history and the latest user question "
+    "which might reference context in the chat history, "
+    "formulate a standalone question which can be understood "
+    "without the chat history. Do NOT answer the question, "
+    "just reformulate it if needed and otherwise return it as is."
 )
+contextualize_q_prompt = ChatPromptTemplate.from_messages([
+    ("system", contextualize_q_system_prompt),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("human", "{input}"),
+])
+
+# Create a history-aware retriever pipeline
+history_aware_retriever = create_history_aware_retriever(
+    chat_llm, retriever, contextualize_q_prompt
+)
+
+# 2. MAIN ANSWER PROMPT
+# Handles the actual RAG response delivery based on the fetched chunks
+system_prompt = (
+    "You are an honest job applicant who is giving a tech interview."
+    "You are a potential candidate for Full Stack AI Engineeer Role."
+    "You have the eagerness to learn and have great desire to get selected in the interview."
+
+    "YOUR TASK:"
+    "You are currently in an interview in a big tech company."
+    "The interviewer will be asking you several questions about you, your personal details, your professional details, your skills, your education, your personality and other details."
+    "You only have one task and that task is to answer the questions asked by the interviewer using only the provided context."
+
+    "CRITICAL RULES FOR ANSWERING THE QUESTIONS:"
+    "1. If the answer cannot be found in the context, do not make up any facts or details, just say 'Sorry, I can only answer professional questions that are related to me.'"
+    "2. Do NOT mention that you are reading from a document, PDF, or database."
+    "3. Keep your tone professional, polite, concise, and direct."
+    "4. If the interviewer asks a compound questions or the questions contains multiple sub-questions then only answer the sub-questions whose answer is present in the context. And for the sub-questions whose answerss are not present in the context just reply with this statement: 'Sorry, I cannot answer this part of the question as I can only provide answers that are related to me professionally'."
+
+    "For example, if the interviewer a question which contains three or more sub-questions like this 'What is your name ? How many planets does our solar system has ? Do you have any work experience ?'."
+    "In this case, you should only on answer these two sub-questions first as they are related to you: 'What is your name ?' and 'Do you have any work experience ?'. And you should not answer this sub-question, 'How many planets does our solar system has ?' , as it is not related to you and your career. For this unrelevant sub-question, just reply at the end in this manner: 'Sorry, I can only provide you information about myself. For any additional question, please follow this link - <https://qnotes23.pythonanywhere.com/guest_mode/>'."
+
+    "Context:\n{context}"
+)
+
+
+qa_prompt = ChatPromptTemplate.from_messages([
+    ("system", system_prompt),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("human", "{input}"),
+])
+
+
+# Create the document chain to combine text blocks
+question_answer_chain = create_stuff_documents_chain(chat_llm, qa_prompt)
+
+# Create the base RAG retrieval chain
+rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
+
+# 3. BACKEND SESSION MEMORY STORAGE
+session_store = {}
+
+def get_session_history(session_id: str):
+    if session_id not in session_store:
+        session_store[session_id] = InMemoryChatMessageHistory()
+    return session_store[session_id]
+
+# 4. EXPORT CONVERSATIONAL CHAIN
+# We must use "input" as the key because create_retrieval_chain requires it.
+conversational_rag_chain = RunnableWithMessageHistory(
+    rag_chain,
+    get_session_history,
+    input_messages_key="input",
+    history_messages_key="chat_history",
+    output_messages_key="answer",
+)
+
+
+# 5. BACKWARDS COMPATIBILITY FIX
+# Overwriting old variable name 'query_chain' so main.py doesn't crash 
+# if it accidentally calls it somewhere else.
+
+# query_chain = conversational_rag_chain
+
 
 ##
 print("\n[ - ] Finally, printing the generated answer/output...")

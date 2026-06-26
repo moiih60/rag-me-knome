@@ -3,5 +3,5 @@ from pydantic import BaseModel
 # For validating the request, other stuff in main.py FatsAPI code
 class ChatRequest(BaseModel):
     question: str
-    # session_id: str
+    session_id: str
 

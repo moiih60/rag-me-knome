@@ -1,3 +1,4 @@
+// SimpleChat.tsx
 import React, { useState, useEffect } from 'react';
 import ChatHistory from './ChatHistory';
 import ChatInput from './ChatInput';

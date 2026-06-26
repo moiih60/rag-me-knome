@@ -1,6 +1,4 @@
-// ChatHistory.tsx
-import React, { useEffect, useRef } from 'react'; // 1. IMPORT useEffect and useRef
-import ReactMarkdown from 'react-markdown';
+import React from 'react';
 import { type Message } from './Chat';
 
 interface ChatHistoryProps {
@@ -9,14 +7,6 @@ interface ChatHistoryProps {
 }
 
 export default function ChatHistory({ messages, loading }: ChatHistoryProps): React.JSX.Element {
-  // 2. CREATE A REFERENCE ANCHOR OBJECT
-  const messagesEndRef = useRef<HTMLDivElement | null>(null);
-
-  // 3. EFFECT BLOCK RUNS AUTOMATICALLY EVERY TIME MESSAGES UPDATES
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, loading]); // Listens for new messages or loading state changes
-
   return (
     <div className="h-[380px] overflow-y-auto border border-gray-200 p-4 rounded-lg flex flex-col gap-3 bg-gray-50/50">
       {messages.length === 0 ? (
@@ -41,28 +31,7 @@ export default function ChatHistory({ messages, loading }: ChatHistoryProps): Re
                     : 'bg-white border border-gray-200 text-gray-800 rounded-tl-none'
                 }`}
               >
-                
-                <ReactMarkdown 
-                  components={{
-                    a: ({ node, ...props }) => (
-                      <a 
-                        {...props} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className={`font-semibold underline ${isUser ? 'text-blue-200 hover:text-white' : 'text-blue-600 hover:text-blue-800'}`}
-                      />
-                    ),
-                    strong: ({ node, ...props }) => (
-                      <strong {...props} className="font-bold" />
-                    )
-                  }}
-                >
-                  
-                  {msg.text}
-                  {/* {msg.text.replace('\n\n', '\n')} */}
-
-                </ReactMarkdown>
-
+                {msg.text}
               </div>
             </div>
           );
@@ -74,9 +43,6 @@ export default function ChatHistory({ messages, loading }: ChatHistoryProps): Re
           AI is thinking...
         </div>
       )}
-
-      {/* 4. THE INVISIBLE SCROLL ANCHOR ELEMENT */}
-      <div ref={messagesEndRef} />
     </div>
   );
 }

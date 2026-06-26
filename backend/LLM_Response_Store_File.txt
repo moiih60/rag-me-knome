@@ -266,3 +266,294 @@ Sorry, I can only provide you information about myself. For any additional quest
 	 - Sorry, I can only answer professional questions that are related to me.
 
 
+## how soon can you join our company ?
+	 - Sorry, I can only answer professional questions that are related to me. The provided context does not include information about my availability to join the company.
+
+
+## What is your name ?
+	 - My name is Darwin Jolly.
+
+
+## What projects have your worked on ?
+	 - I have worked on two projects:
+
+1. **Question Paper Analysis | GenAI Project**: This project utilized Python, LangChain, FastAPI, React, and Pinecone.
+2. **Online Compiler | Full Stack Project**: This project was developed using Python, Django, HTML5, CSS3, JavaScript, and jQuery.
+
+If you have any other questions related to my professional experience, feel free to ask.
+
+
+## Aapke paas kitne samay ka work experience hai ?
+	 - I have 2 years of work experience.
+
+
+## In which company ?
+	 - Sorry, I can only answer professional questions that are related to me. Could you please specify the company you are referring to?
+
+
+## what is your name ?
+	 - Your Name: Darwin Jolly
+
+
+## what  is your name ?
+	 - My name is Darwin Jolly.
+
+
+## what did you said ?
+	 - My name is Darwin Jolly.
+
+
+## how many years of work experience do you have ?
+	 - I have 2 years of work experience.
+
+
+## in which company ?
+	 - I worked at XYZ Solutions.
+
+
+## in which company ?
+	 - XYZ Solutions
+
+
+## Hello
+	 - Hello, nice to meet you.
+
+
+## What is your name ?
+	 - My name is Darwin Jolly.
+
+
+## Do you have any previous professional experience in developing GenAI applications ?
+	 - Yes, I have experience in developing GenAI applications. For instance, I worked on a project called "Question Paper Analysis" which involved using technologies like Python, LangChain, FastAPI, React, and Pinecone to create an AI-powered application.
+
+
+## No, I mean professionally in a company ?
+	 - Sorry, I can only answer professional questions that are related to me. For any additional question, please follow this link - [Contact Us](https://www.example.com/contact).
+
+
+## Do you have knowledge of embedding ?
+	 - Yes, I have knowledge of embeddings. I have used Gemini Embedding API for text embeddings in my projects.
+
+
+## How many years of professional experience do you have ?
+	 - I have a total of 2 years of professional experience.
+
+
+## Where ?
+	 - I worked as a Backup Support Engineer at XYZ Solutions in Gurgaon, Haryana.
+
+
+## But you are a UK citizeen ?
+	 - Sorry, I can only provide answers that are related to me professionally. For any additional question, please follow this link - [Contact Us](https://www.example.com/contact).
+
+
+## Why ?
+	 - Sorry, I can only answer professional questions that are related to me. For any additional question, please follow this link - [Contact Us](https://www.example.com/contact).
+
+
+## What is it  ?
+	 - Sorry, I can only answer professional questions that are related to me.
+
+
+## what is a string ?
+	 - Sorry, I can only answer professional questions that are related to me.
+
+
+## Fhgfh
+	 - Sorry, I can only answer professional questions that are related to me.
+
+
+## Hello Nice to meet you ?
+	 - Hello, nice to meet you as well.
+
+
+## What is your name and what was your salary ?
+	 - My name is Darwin Jolly. Sorry, I cannot answer this part of the question as I can only provide answers that are related to me professionally.
+
+
+## Do you have any contact website ?
+	 - Yes, my contact website is [https://www.qnotes23.pythonanywhere.com/guest_mode/](https://www.qnotes23.pythonanywhere.com/guest_mode/).
+
+
+## Can you repeat what you just saiud ?
+	 - Certainly. Here is a summary of my skills and knowledge:
+
+- Proficiency in Retrieval-Augmented Generation (RAG), chunks, embeddings & dimensions, LLM temperature adjustment, prompt templates, prompt engineering, retrievers, and semantic search.
+- Proficiency in Python with a good command of C, C++, and Java, and the ability to automate repetitive tasks using Python scripts.
+- Knowledge of nodes, edges, and conditional edges for creating self-correcting, autonomous agents using LangGraph.
+
+
+## Contact website please ?
+	 - Sure, for any additional questions, please follow this link: [Contact Website](https://www.example.com/contact).
+
+
+## Contact website ?
+	 - https://qnotes23.pythonanywhere.com/guest_mode/
+
+
+## Do you have any contact website ?
+	 - Yes, my contact website is <https://qnotes23.pythonanywhere.com/guest_mode/>.
+
+
+## What is your name ?
+	 - My name is Darwin Jolly.
+
+
+## Please show your projects 
+	 - Sure, here are my projects:
+
+1. **Question Paper Analysis | GenAI Project**
+   - Technologies used: Python, LangChain, FastAPI, React, Pinecone
+
+2. **Online Compiler | Full Stack Project**
+   - Technologies used: Python, Django, HTML5, CSS3, JavaScript, jQuery
+
+
+## What is GenAI ?
+	 - Sorry, I can only provide answers that are related to me professionally. For any additional question, please follow this link - <https://qnotes23.pythonanywhere.com/guest_mode/>.
+
+
+## Have you worked in IT ?
+	 - Yes, I have worked as a Backup Support Engineer at XYZ Solutions in Gurgaon, Haryana.
+
+
+## Where does the largest population of lions live ?
+	 - Sorry, I can only provide you information about myself. For any additional question, please follow this link - [Contact Website](https://www.example.com/contact).
+
+
+## Is there any other way I can contact you ?
+	 - You can contact me through the website provided: [https://qnotes23.pythonanywhere.com/guest_mode/](https://qnotes23.pythonanywhere.com/guest_mode/).
+
+
+## Hello, how are you ? What is address ?
+	 - Hello, I am doing well, thank you. How can I assist you today?
+
+Sorry, I can only provide answers that are related to me professionally. For any additional question, please follow this link - <https://qnotes23.pythonanywhere.com/guest_mode/>.
+
+
+## Whatis your citizenship and where have you work before ?
+	 - My citizenship is United States.
+
+I have worked as a Backup Support Engineer at XYZ Solutions in Gurgaon, Haryana.
+
+
+## Projects ?
+	 - I have worked on two projects:
+
+1. **Question Paper Analysis | GenAI Project**: Technologies used include Python, LangChain, FastAPI, React, and Pinecone.
+2. **Online Compiler | Full Stack Project**: Technologies used include Python, Django, HTML5, CSS3, JavaScript, and jQuery.
+
+These projects showcase my skills in full-stack development and my ability to work with various technologies.
+
+
+## Please provide you contact website ?
+	 - Sure, you can visit my contact website at <https://qnotes23.pythonanywhere.com/guest_mode/>.
+
+
+## Projects ?
+	 - I have worked on two projects:
+
+1. **Question Paper Analysis | GenAI Project**: Technologies used include Python, LangChain, FastAPI, React, and Pinecone.
+2. **Online Compiler | Full Stack Project**: Technologies used include Python, Django, HTML5, CSS3, JavaScript, and jQuery.
+
+These projects showcase my skills in full-stack development and my ability to work with various technologies.
+
+
+## Please tell more about this project: Question Paper Analysis | GenAI Project: Technologies used include Python, LangChain, FastAPI, React, and Pinecone.
+	 - Certainly! The **Question Paper Analysis | GenAI Project** is a GenAI project where I developed a Retrieval-Augmented Generation (RAG) pipeline using LangChain. Here are the key details:
+
+- **Technologies Used**:
+  - **Python**: The primary programming language.
+  - **LangChain**: A framework for building applications that can access and utilize external APIs and data sources.
+  - **FastAPI**: A modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints.
+  - **React**: A JavaScript library for building user interfaces.
+  - **Pinecone**: A vector database for fast and scalable similarity search.
+
+- **Project Overview**:
+  - **Objective**: To summarize and find patterns in multiple question papers.
+  - **Functionality**: 
+    - **Summarization**: Automatically generate summaries of question papers.
+    - **Pattern Recognition**: Identify common patterns and trends in the questions.
+    - **User Interface**: A web application built with React for user interaction.
+
+This project demonstrates my ability to integrate multiple technologies to build a robust and scalable AI-powered application.
+
+
+## Projects
+	 - Certainly! Here are the details of the projects I have worked on:
+
+1. **Question Paper Analysis | GenAI Project**:
+   - **Technologies Used**: Python, LangChain, FastAPI, React, Pinecone.
+   - **Objective**: To summarize and find patterns in multiple question papers.
+   - **Functionality**:
+     - Summarization: Automatically generate summaries of question papers.
+     - Pattern Recognition: Identify common patterns and trends in the questions.
+     - User Interface: A web application built with React for user interaction.
+
+2. **Online Compiler | Full Stack Project**:
+   - **Technologies Used**: Python, Django, HTML5, CSS3, JavaScript, jQuery.
+   - **Objective**: To create a web-based compiler.
+   - **Functionality**:
+     - Full Stack Development: Built using Django for the backend and React for the frontend.
+     - Interactive Interface: Allows users to write, compile, and run code in various programming languages.
+
+These projects showcase my skills in full-stack development and my ability to work with various technologies.
+
+
+## Projects
+	 - Sure, I have two projects that I would like to share:
+
+1. **Question Paper Analysis | GenAI Project**: This project utilizes Python, LangChain, FastAPI, React, and Pinecone. It involves using generative AI to analyze question papers.
+
+2. **Online Compiler | Full Stack Project**: This project uses Python, Django, HTML5, CSS3, JavaScript, and jQuery. It is a full-stack application designed to provide an online coding environment.
+
+
+## Please tell more about this project:
+	 - Certainly! Here are more details about the **Online Compiler | Full Stack Project**:
+
+- **Technologies Used**: Python, Django, HTML5, CSS3, JavaScript, jQuery.
+- **Description**: This project is a full-stack application that provides an online coding environment where users can run, modify, and save programs written in various programming languages.
+- **Features**:
+  - **Real-time Language Recognition**: The application automatically recognizes the programming language used by the user.
+  - **User Authentication**: Users can create accounts and log in to access their saved programs.
+  - **Error Resolution Suggestions**: The application provides suggestions for resolving common errors in the code.
+
+If you have any specific aspects you'd like more information on, feel free to ask!
+
+
+## Hello
+	 - Hello, nice to meet you.
+
+
+## How are you ?
+	 - I'm doing well, thank you for asking. How can I assist you today?
+
+
+## I want to know about you, who are you ?
+	 - My name is Darwin Jolly. I am a citizen of the United States.
+
+
+## Tel me about your skills
+	 - I have experience in debugging and experimenting with various LLM models API such as OpenAI’s GPT, Gemini, Claude, and Llama. Professionally, I am a Full Stack Web Developer with a strong command over web development technologies like Python, Django, React, and FastAPI. I also have the ability to integrate AI capabilities into web products.
+
+
+## Hello
+	 - Hello, nice to meet you.
+
+
+## What is your name ?
+	 - My name is Darwin Jolly.
+
+
+## Kjhbjkhb
+	 - Sorry, I can only answer professional questions that are related to me.
+
+
+## Ok
+	 - Sure, please go ahead and ask your questions related to my professional background and skills.
+
+
+## Professional background
+	 - I have 2 years of experience as a Backup Support Engineer at XYZ Solutions in Gurgaon, Haryana.
+
+
